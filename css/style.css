@@ -2,22 +2,25 @@ body {
     background-color: #F885B7;
     height: 100vh;
     color: #380019;
+    text-align: center;
 }
 header {
     width: 100%;
     height: 10%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 header input {
     width: 40%;
     height: 50%;
-    align-self: flex-end;
+    align-self: center;
     border: none;
     border-radius: 5px;
     background-color: #EE5F9E;
     color: #380019;
 }
+
 main {
     width: 100%;
     display: flex;
@@ -37,6 +40,7 @@ main section {
     border-radius: 5px;
     background-image: url(./barrapreta.png);
     background-position: center;
+    background-repeat: no-repeat;
 }
 main section div {
     margin: 0 auto;
