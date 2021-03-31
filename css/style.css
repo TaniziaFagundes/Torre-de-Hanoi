@@ -14,12 +14,11 @@ main header {
     height: 20%;
 }
 main section {
+    display: flex;
+    flex-direction:column-reverse;
     background-color: cadetblue;
     width: 80%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     height: 11rem;
 }
 main section div {
@@ -28,17 +27,27 @@ main section div {
     height: 1.5rem;
     padding: 0.5rem 0;
 }
+
+.disco{
+    border-radius:5px;
+    border: 2px solid rgb(53, 54, 54) ;
+}
+
 #disco1 {
     width: 65%;
+    background-color: rgb(58, 58, 95);
 }
 #disco2 {
     width: 75%;
+    background-color: rgb(151, 67, 67);
 }
 #disco3 {
     width: 85%;
+    background-color: rgb(54, 151, 54);
 }
 #disco4 {
     width: 95%;
+    background-color: aqua;
 }
 
 @media (min-width: 768px){

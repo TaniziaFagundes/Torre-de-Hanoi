@@ -23,23 +23,30 @@
 
 
 
-    <main>
+    <main class="inicio">
         <!--
             corpo do trem
         -->
-        <section id="coluna1">
+        <div class="invalid"></div>
+        <div class="painel"></div>
+        <div class="vitoria"></div>
+        
+        <!--<button onclick="reset()">Reiniciar</button>-->
+        
+
+        <section id="coluna1" class="movezone" >
             
-            <div id="disco1">disco1</div>
-            <div id="disco2">disco2</div>
-            <div id="disco3">disco3</div>
-            <div id="disco4">disco4</div>
+            <div id="disco4" class="move disco" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">disco4</div>
+            <div id="disco3" class="move disco" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">disco3</div>
+            <div id="disco2" class="move disco" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">disco2</div>
+            <div id="disco1" class="move disco" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">disco1</div>
             
         </section>
-        <section id="coluna2">
+        <section id="coluna2" class="movezone" type="reset">
             
 
         </section>
-        <section id="coluna3">
+        <section id="coluna3" class="movezone" type="reset">
             
             
 
@@ -58,6 +65,6 @@
 
 
 
-    <script src=""></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
