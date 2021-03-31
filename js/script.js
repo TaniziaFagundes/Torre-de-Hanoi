@@ -1,12 +1,13 @@
 //movimento do jogo e regras
 var move;
 var coluna;
-
+var verificar;
 //funcoes extras 
 var movimento = 0;
 const movimentos = document.querySelector(".painel")
 const vitoria = document.querySelector(".vitoria")
 const invalido = document.querySelector(".invalid");
+
 function painel(movimento){
     movimentos.innerHTML = null; //reset inicial
     var mov = document.createElement("h4");
@@ -20,7 +21,7 @@ function finalJogo(movimento){
     var conteudo = document.createTextNode("Parabens!!, você conseguiu finalizar com "+movimento+ " movimentos!!");
     final.appendChild(conteudo);
     vitoria.appendChild(final);
-    
+   
 }
 
 function jogadaInvalida(){
@@ -48,17 +49,30 @@ document.addEventListener("dragover",function(event){
 
 document.addEventListener("drop",function(event){
     event.preventDefault();
-
+    
     //regra inserir apenas acima de um maior
     //console.log(move.id)
     ultimo = event.target.lastChild.id;
-    console.log(ultimo)
+    //console.log(ultimo)
+    verificar = move.parentNode; //pegando elemento pai do elemento disc selecionado
 
-    if(ultimo == undefined || move.id == "disco1" || 
+    /* teste condição de movimento primeiro disco
+    if(verificar.lastElementChild.id == move.id){
+        console.log(true)
+    }else{
+        console.log(false)
+    }
+    */
+   
+    
+
+    if(
+      (ultimo == undefined || move.id == "disco1" || 
       (move.id == "disco2" && ultimo == "disco3") ||
-      (move.id == "disco2" && ultimo == "disco4")  ||
+      (move.id == "disco2" && ultimo == "disco4") ||
       (move.id == "disco3" && ultimo == "disco4") ||
-      (move.id == "disco4" && ultimo == undefined)){
+      (move.id == "disco4" && ultimo == undefined)) &&
+       verificar.lastElementChild.id == move.id){ 
 
         //movendo elementos
         if(event.target.className=="movezone" ){
