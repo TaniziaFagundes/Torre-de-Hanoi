@@ -27,7 +27,8 @@ function finalJogo(movimento){
 function jogadaInvalida(){
     var inval = document.createElement("h3");
     var conteudo = document.createTextNode("Jogada Invalida!!!");
-    inval.appendChild(conteudo);
+    inval.appendChild(conteudo); 
+    if(invalido.childElementCount > 0){invalido.innerHTML = null;}
     invalido.appendChild(inval);
 }
 
@@ -81,6 +82,7 @@ document.addEventListener("drop",function(event){
             move.parentNode.removeChild(move)
             event.target.appendChild(move);
             movimento+=1
+            
         }
         painel(movimento) //alterando quant movimentos
     }else{
